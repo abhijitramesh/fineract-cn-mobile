@@ -277,6 +277,6 @@ public abstract class BaseFragmentDebtIncome extends FineractBaseFragment implem
     }
 
     public String setPrecision(Double aDouble) {
-        return String.format(Locale.ENGLISH, "%.2f", aDouble);
+        return String.format(Locale.ENGLISH, String.valueOf(String.valueOf(R.string.String_Format)), aDouble);
     }
 }

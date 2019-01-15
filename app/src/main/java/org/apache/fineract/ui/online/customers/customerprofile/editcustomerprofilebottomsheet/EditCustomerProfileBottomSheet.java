@@ -169,7 +169,7 @@ public class EditCustomerProfileBottomSheet extends FineractBaseBottomSheetDialo
     @Override
     public void viewGallery() {
         Intent intentDocument = new Intent(Intent.ACTION_GET_CONTENT);
-        intentDocument.setType("image/*");
+        intentDocument.setType(String.valueOf(R.string.Image));
         startActivityForResult(intentDocument, REQUEST_PHOTO_FROM_GALLERY);
     }
 
@@ -311,9 +311,9 @@ public class EditCustomerProfileBottomSheet extends FineractBaseBottomSheetDialo
                 return;
             }
             Bundle extras = data.getExtras();
-            Bitmap imageBitmap = (Bitmap) extras.get("data");
+            Bitmap imageBitmap = (Bitmap) extras.get(String.valueOf(R.string.Data));
 
-            file = FileUtils.createFile(getString(R.string.fineract), customerIdentifier + ".png");
+            file = FileUtils.createFile(getString(R.string.fineract), customerIdentifier + String.valueOf(R.string.File_Format));
             FileUtils.saveBitmap(imageBitmap, file);
             tvImageName.setText(file.getName());
             ivCustomerPicture.setImageBitmap(imageBitmap);

@@ -37,7 +37,7 @@ public class LoanApplicationActivity extends FineractBaseActivity
         OnNavigationBarListener.LoanDebtIncomeData, OnNavigationBarListener.LoanCoSignerData,
         LoanApplicationContract.View {
 
-    private static final String CURRENT_STEP_POSITION = "position";
+    private static final String CURRENT_STEP_POSITION = String.valueOf(R.string.POSITION);
     private static final String LOG_TAG = LoanApplicationActivity.class.getSimpleName();
 
     @BindView(R.id.stepperLayout)

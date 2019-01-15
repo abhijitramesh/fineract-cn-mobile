@@ -10,6 +10,7 @@ import android.support.annotation.NonNull;
 import android.text.TextUtils;
 
 import org.apache.fineract.FineractApplication;
+import org.apache.fineract.R;
 import org.apache.fineract.data.local.PreferenceKey;
 import org.apache.fineract.data.local.PreferencesHelper;
 
@@ -29,11 +30,11 @@ import okhttp3.Response;
  */
 public class FineractInterceptor implements Interceptor {
 
-    public static final String HEADER_TENANT = "X-Tenant-Identifier";
-    public static final String HEADER_AUTH = "Authorization";
-    private static final String HEADER_ACCEPT_JSON = "Accept";
-    private static final String HEADER_CONTENT_TYPE = "Content-type";
-    public static final String HEADER_USER = "User";
+    public static final String HEADER_TENANT =String.valueOf(R.string.HEADER_TENANT);
+    public static final String HEADER_AUTH = String.valueOf(R.string.HEADER_AUTH);
+    private static final String HEADER_ACCEPT_JSON = String.valueOf(R.string.HEADER_ACCEPT_JSON);
+    private static final String HEADER_CONTENT_TYPE = String.valueOf(R.string.HEADER_CONTENT_TYPE);
+    public static final String HEADER_USER = String.valueOf(R.string.HEADER_USER);
 
     @Inject
     PreferencesHelper preferencesHelper;
@@ -54,8 +55,8 @@ public class FineractInterceptor implements Interceptor {
         Boolean refreshTokenStatus = preferencesHelper.getBoolean(
                 PreferenceKey.PREF_KEY_REFRESH_ACCESS_TOKEN, false);
 
-        builder.header(HEADER_ACCEPT_JSON, "application/json");
-        builder.header(HEADER_CONTENT_TYPE, "application/json");
+        builder.header(HEADER_ACCEPT_JSON, String.valueOf(R.string.Application_Json));
+        builder.header(HEADER_CONTENT_TYPE, String.valueOf(R.string.Application_Json));
 
         if (refreshTokenStatus) {
             //Add Cookies
@@ -63,7 +64,7 @@ public class FineractInterceptor implements Interceptor {
                             PreferenceKey.PREF_KEY_COOKIES);
             if (cookies != null) {
                 for (String cookie : cookies) {
-                    builder.addHeader("Cookie", cookie);
+                    builder.addHeader(String.valueOf(R.string.Cookie), cookie);
                 }
             }
         } else {

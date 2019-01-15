@@ -57,7 +57,7 @@ public class EditCustomerProfilePresenter extends BasePresenter<EditCustomerProf
         RequestBody requestFile =
                 RequestBody.create(MediaType.parse(FileUtils.getMimeType(file)), file);
         MultipartBody.Part body =
-                MultipartBody.Part.createFormData("portrait", file.getName(), requestFile);
+                MultipartBody.Part.createFormData(String.valueOf(R.string.portrait), file.getName(), requestFile);
 
         checkViewAttached();
         getMvpView().showProgressDialog(context.getString(R.string.uploading_portrait));

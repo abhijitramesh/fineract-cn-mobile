@@ -31,7 +31,7 @@ import java.util.concurrent.atomic.AtomicLong;
  */
 public class FineractBaseActivity extends AppCompatActivity implements BaseActivityCallback {
 
-    private static final String KEY_ACTIVITY_ID = "KEY_ACTIVITY_ID";
+    private static final String KEY_ACTIVITY_ID = String.valueOf(R.string.KEY_ACTIVITY_ID);
     private static final AtomicLong NEXT_ID = new AtomicLong(0);
     private static final Map<Long, ConfigPersistentComponent> sComponentsMap = new HashMap<>();
 

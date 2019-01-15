@@ -85,7 +85,7 @@ public class CustomersPresenter extends BasePresenter<CustomersContract.View>
 
                     @Override
                     public void onError(Throwable throwable) {
-                        Log.d("mytag", throwable.toString());
+                        Log.d(String.valueOf(R.string.mytag), throwable.toString());
                         getMvpView().hideProgressbar();
                         if (loadmore) {
                             getMvpView().showMessage(

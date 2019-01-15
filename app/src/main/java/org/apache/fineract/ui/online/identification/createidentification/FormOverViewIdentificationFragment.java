@@ -29,7 +29,7 @@ import butterknife.ButterKnife;
 public class FormOverViewIdentificationFragment extends FineractBaseFragment implements Step,
         OverViewContract {
 
-    public static final String DATE_FORMAT = "dd MMM yyyy";
+    public static final String DATE_FORMAT = String.valueOf(R.string.OUTPUT_DATE_FORMAT);
 
     @BindView(R.id.et_number)
     EditText etNumber;

@@ -2,6 +2,8 @@ package org.apache.fineract.utils;
 
 import android.util.Log;
 
+import org.apache.fineract.R;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -17,11 +19,11 @@ public class DateUtils {
 
     public static final String LOG_TAG = DateUtils.class.getSimpleName();
 
-    public static final String STANDARD_DATE_TIME_FORMAT = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'";
-    public static final String DATE_TIME_FORMAT = "yyyy MMM dd HH:mm:ss";
-    public static final String OUTPUT_DATE_FORMAT = "dd MMM yyyy";
-    public static final String INPUT_DATE_FORMAT = "yyyy-MM-dd'Z'";
-    public static final String ACTIVITIES_DATE_FORMAT = "MMM dd, yyyy, HH:mm:ss a";
+    public static final String STANDARD_DATE_TIME_FORMAT = String.valueOf(R.string.STANDARD_DATE_TIME_FORMAT);
+    public static final String DATE_TIME_FORMAT = String.valueOf(R.string.DATE_TIME_FORMAT);
+    public static final String OUTPUT_DATE_FORMAT = String.valueOf(R.string.OUTPUT_DATE_FORMAT);
+    public static final String INPUT_DATE_FORMAT = String.valueOf(R.string.INPUT_DATE_FORMAT);
+    public static final String ACTIVITIES_DATE_FORMAT = String.valueOf(R.string.ACTIVITIES_DATE_FORMAT);
 
     /**
      * Format date time string into "2013 Feb 28 13:24:56" format.
@@ -74,7 +76,7 @@ public class DateUtils {
     public static String getDateInUTC(Calendar time) {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(STANDARD_DATE_TIME_FORMAT,
                 Locale.ENGLISH);
-        simpleDateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
+        simpleDateFormat.setTimeZone(TimeZone.getTimeZone(String.valueOf(R.string.TIME_ZONE)));
         return simpleDateFormat.format(time.getTime());
     }
 

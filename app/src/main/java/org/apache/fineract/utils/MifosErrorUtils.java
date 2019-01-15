@@ -6,6 +6,8 @@ import android.content.Context;
 import android.util.Log;
 
 import com.google.gson.Gson;
+
+import org.apache.fineract.R;
 import org.apache.fineract.data.models.error.MifosError;
 
 import java.io.IOException;
@@ -23,8 +25,8 @@ import retrofit2.Response;
 //TODO Write standard Error utils
 public class MifosErrorUtils {
 
-    public static final String LOG_TAG = "MifosErrorUtils";
-    public static final String NETWORK_ERROR_MESSAGE = "No Internet Connection!";
+    public static final String LOG_TAG = String.valueOf(R.string.error_MyfosErrorUtils);
+    public static final String NETWORK_ERROR_MESSAGE = String.valueOf(R.string.error_No_Internet_Connection);
 
     private static Gson gson = new Gson();
 

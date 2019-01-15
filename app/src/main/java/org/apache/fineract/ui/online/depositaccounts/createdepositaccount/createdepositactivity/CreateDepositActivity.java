@@ -30,7 +30,7 @@ public class CreateDepositActivity extends FineractBaseActivity implements
         StepperLayout.StepperListener, DepositOnNavigationBarListener.ProductInstanceDetails,
         CreateDepositContract.View {
 
-    private static final String CURRENT_STEP_POSITION = "position";
+    private static final String CURRENT_STEP_POSITION = String.valueOf(R.string.POSITION);
     private static final String LOG_TAG = CreateDepositActivity.class.getSimpleName();
 
     @BindView(R.id.stepperLayout)

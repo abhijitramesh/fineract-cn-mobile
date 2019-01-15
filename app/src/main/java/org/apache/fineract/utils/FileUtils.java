@@ -10,9 +10,12 @@ import android.os.Build;
 import android.os.Environment;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
+import android.renderscript.Sampler;
 import android.support.annotation.NonNull;
 import android.util.Log;
 import android.webkit.MimeTypeMap;
+
+import org.apache.fineract.R;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -33,13 +36,13 @@ public class FileUtils {
     }
 
     public static String getPathOnKitkatBelowVersion(Context context, Uri uri) {
-        if ("content".equalsIgnoreCase(uri.getScheme())) {
-            String[] projection = {"_data"};
+        if (String.valueOf(R.string.content).equalsIgnoreCase(uri.getScheme())) {
+            String[] projection = {String.valueOf(R.string.data)};
             Cursor cursor = null;
 
             try {
                 cursor = context.getContentResolver().query(uri, projection, null, null, null);
-                int columnIndex = cursor.getColumnIndexOrThrow("_data");
+                int columnIndex = cursor.getColumnIndexOrThrow(String.valueOf(R.string.data));
                 if (cursor.moveToFirst()) {
                     return cursor.getString(columnIndex);
                 }
@@ -66,7 +69,7 @@ public class FileUtils {
                 final String[] split = docId.split(":");
                 final String type = split[0];
 
-                if ("primary".equalsIgnoreCase(type)) {
+                if (String.valueOf(R.string.primary).equalsIgnoreCase(type)) {
                     return Environment.getExternalStorageDirectory() + "/" + split[1];
                 }
                 // TODO handle non-primary volumes
@@ -76,7 +79,7 @@ public class FileUtils {
 
                 final String id = DocumentsContract.getDocumentId(uri);
                 final Uri contentUri = ContentUris.withAppendedId(
-                        Uri.parse("content://downloads/public_downloads"), Long.parseLong(id));
+                        Uri.parse(String.valueOf(R.string.Content_URI)), Long.parseLong(id));
 
                 return getDataColumn(context, contentUri, null, null);
 
@@ -89,13 +92,13 @@ public class FileUtils {
                 Uri contentUri = null;
                 if ("image".equals(type)) {
                     contentUri = MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
-                } else if ("video".equals(type)) {
+                } else if (String.valueOf(R.string.video).equals(type)) {
                     contentUri = MediaStore.Video.Media.EXTERNAL_CONTENT_URI;
-                } else if ("audio".equals(type)) {
+                } else if (String.valueOf(R.string.audio).equals(type)) {
                     contentUri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI;
                 }
 
-                final String selection = "_id=?";
+                final String selection = String.valueOf(R.string.String_selection);
                 final String[] selectionArgs = new String[]{
                         split[1]
                 };
@@ -104,7 +107,7 @@ public class FileUtils {
             }
 
             // MediaStore (and general)
-        } else if ("content".equalsIgnoreCase(uri.getScheme())) {
+        } else if (String.valueOf(R.string.content).equalsIgnoreCase(uri.getScheme())) {
 
             // Return the remote address
             if (isGooglePhotosUri(uri)) {
@@ -125,7 +128,7 @@ public class FileUtils {
             String[] selectionArgs) {
 
         Cursor cursor = null;
-        final String column = "_data";
+        final String column = String.valueOf(R.string.data);
         final String[] projection = {
                 column
         };
@@ -151,7 +154,7 @@ public class FileUtils {
      * @return Whether the Uri authority is ExternalStorageProvider.
      */
     public static boolean isExternalStorageDocument(Uri uri) {
-        return "com.android.externalstorage.documents".equals(uri.getAuthority());
+        return String.valueOf(R.string.External_Storage).equals(uri.getAuthority());
     }
 
     /**
@@ -159,7 +162,7 @@ public class FileUtils {
      * @return Whether the Uri authority is DownloadsProvider.
      */
     public static boolean isDownloadsDocument(Uri uri) {
-        return "com.android.providers.downloads.documents".equals(uri.getAuthority());
+        return String.valueOf(R.string.Downloads_Document).equals(uri.getAuthority());
     }
 
     /**
@@ -167,7 +170,7 @@ public class FileUtils {
      * @return Whether the Uri authority is MediaProvider.
      */
     public static boolean isMediaDocument(Uri uri) {
-        return "com.android.providers.media.documents".equals(uri.getAuthority());
+        return String.valueOf(R.string.Media_Document).equals(uri.getAuthority());
     }
 
     /**
@@ -175,7 +178,7 @@ public class FileUtils {
      * @return Whether the Uri authority is Google Photos.
      */
     public static boolean isGooglePhotosUri(Uri uri) {
-        return "com.google.android.apps.photos.content".equals(uri.getAuthority());
+        return String.valueOf(R.string.Goosle_Photos_Uri).equals(uri.getAuthority());
     }
 
     /**
@@ -202,7 +205,7 @@ public class FileUtils {
             type = MimeTypeMap.getSingleton().getMimeTypeFromExtension(extension.toLowerCase());
         }
         if (type == null) {
-            type = "image/*"; // fallback type. You might set it to */*
+            type = String.valueOf(R.string.Image); // fallback type. You might set it to */*
         }
         return type;
     }

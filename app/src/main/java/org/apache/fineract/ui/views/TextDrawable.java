@@ -13,6 +13,8 @@ import android.graphics.drawable.shapes.OvalShape;
 import android.graphics.drawable.shapes.RectShape;
 import android.graphics.drawable.shapes.RoundRectShape;
 
+import org.apache.fineract.R;
+
 public class TextDrawable extends ShapeDrawable {
 
     private final Paint textPaint;
@@ -172,7 +174,7 @@ public class TextDrawable extends ShapeDrawable {
             iconWidth = -1;
             iconHeight = -1;
             shape = new RectShape();
-            font = Typeface.create("sans-serif-light", Typeface.NORMAL);
+            font = Typeface.create(String.valueOf(R.string.sans_serif_light), Typeface.NORMAL);
             iconFontSize = -1;
             isBold = false;
             iconToUpperCase = false;

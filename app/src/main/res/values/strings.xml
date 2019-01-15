@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Fineract 2.0</string>
 
     <string name="enter_you_credentials">Please enter your credentials</string>
@@ -277,6 +277,10 @@
     <string name="error_fetching_customer_details">Failed to fetch customer details</string>
     <string name="error_fetching_deposit_product">Failed to fetch deposit product</string>
     <string name="error_failed_to_refresh_customers">Failed to refresh customers</string>
+    <string name="error_MyfosErrorUtils">MifosErrorUtils</string>
+    <string name="error_No_Internet_Connection">No Internet Connection!</string>
+    <string name="error_Field_Expects_at_least"> Field Expects at least </string>
+    <string name="No_connectivity_exception">No connectivity exception</string>
 
 
     <!--Material Dialog-->
@@ -331,6 +335,12 @@
     <string name="dialog_message_read_permission_never_ask_again">You have denied permission to
         read in external storage, without this permission you will not be able to view image from gallery.
         Please enable it in settings</string>
+    <string name="dialog_message_fetching_data_from_server">Fetching data from server, we will notify you once its done.</string>
+    <string name="dialog_message_fetching_data_complete">Fetching data complete.</string>
+    <string name="Default">default</string>
+    <string name="Your_Channel_Name">YOUR_CHANNEL_NAME</string>
+    <string name="Notification_Channel">NOTIFICATION_CHANNEL</string>
+
 
 
     <!--Customer Current status-->
@@ -454,6 +464,137 @@
         <item>29.</item>
         <item>30.</item>
     </string-array>
+
+    <!-- BaseUrl -->
+    <string name="https">https://</string>
+    <string name="apiendpoint">pilot.kuelap.io</string>
+
+    <!-- ConstatKeys -->
+    <string name="CUSTOMER_IDENTIFIER">customer_identifier</string>
+    <string name="CUSTOMER_STATUS">customer_status</string>
+    <string name="IS_NEW_CUSTOMER">is_new_customer</string>
+    <string name="CUSTOMER_ACTION">customer_action</string>
+    <string name="CUSTOMER">customer</string>
+    <string name="CUSTOMER_ADDRESS">customer_address</string>
+    <string name="CUSTOMER_CONTACT_DETAILS">customer_contact_detailsr</string>
+    <string name="PRODUCT_IDENTIFIER">product_identifier</string>
+    <string name="CASE_IDENTIFIER">case_identifier</string>
+    <string name="ACCOUNT_IDENTIFIER">account_identifier</string>
+    <string name="LOAN_CREDITWORTHINESSSNAPSHOTS">loan_creditWorthinessSnapshots</string>
+    <string name="IDENTIFICATION_CARD">identification_card</string>
+    <string name="IDENTIFICATION_SCAN_CARD">identification_scan_card</string>
+    <string name="IDENTIFICATION_NUMBER">identification_number</string>
+    <string name="IDENTIFICATION_ACTION">identification_action</string>
+    <string name="DEPOSIT_ACTION">deposit_action</string>
+    <string name="DEPOSIT_ACCOUNT">deposit</string>
+    <string name="COUNTRIES">countriesr</string>
+    <string name="PERMISSIONS_CAMERA_STATUS">camera_status</string>
+    <string name="PERMISSIONS_WRITE_EXTERNAL_STORAGE_STATUS">"write_status</string>
+    <string name="PERMISSIONS_READ_EXTERNAL_STORAGE_STATUS">"read_status</string>
+
+    <string name="POSITION">position</string>
+    <string name="PRODUCTS">products</string>
+
+
+    <!-- CreationUpdationCustomerJob -->
+    <string name="CUSTOMERS_CREATION_UPDATION">CUSTOMERS_CREATION_UPDATION</string>
+
+    <!-- CustomerLoanDetailsFragment -->
+    <string name="Under_Construction">Under construction</string>
+
+    <!-- CustomerProfileActivity -->
+    <string name="Image_Format">image/jpg</string>
+
+    <!-- CustomerPresenter -->
+    <string name="mytag">mytag</string>
+
+    <!--DataManagerAuth -->
+    <string name="UTF_8">UTF-8</string>
+
+    <!-- DateUtils -->
+    <string name="STANDARD_DATE_TIME_FORMAT" tools:ignore="StringEscaping">yyyy-MM-dd'T'HH:mm:ss.SSS'Z'</string>
+    <string name="DATE_TIME_FORMAT">yyyy MMM dd HH:mm:ss</string>
+    <string name="OUTPUT_DATE_FORMAT">dd MMM yyyy</string>
+    <string name="INPUT_DATE_FORMAT" tools:ignore="StringEscaping">yyyy-MM-dd'Z'</string>
+    <string name="ACTIVITIES_DATE_FORMAT">MMM dd, yyyy, HH:mm:ss a</string>
+    <string name="TIME_ZONE">UTC</string>
+
+    <!-- EditCustomerProfileBottomSheet -->
+    <string name="Image">image/*</string>
+    <string name="Data">data</string>
+    <string name="File_Format">.png</string>
+
+    <!-- EditCustomerProfilePresenter -->
+    <string name="portrait">portrait</string>
+
+
+
+    <!-- Fake Json Name -->
+    <string name="CUSTOMERJ">customer.json</string>
+    <string name="AUTHENTICATION">authentication.json</string>
+    <string name="CUSTOMER_PAGE">customerPage.json</string>
+    <string name="LOAN_ACCOUNT_PAGE">loanAccountPage.json</string>
+    <string name="DEPOSIT_ACCOUNTS">depositAccount.json</string>
+    <string name="IDENTIFICATIONS">identification.json</string>
+    <string name="SCAN_CARDS">scanCard.json</string>
+    <string name="CUSTOMER_COMMANDS">command.json</string>
+    <string name="LOAN_ACCOUNT">loanAccount.json</string>
+    <string name="PLANNED_PAYMENT_PAGE">plannedPaymentPage.json</string>
+    <string name="ROLES">role.json</string>
+    <string name="LEDGER_PAGE">ledgerPage.json</string>
+    <string name="ACCOUNT_PAGE">accountsPage.json</string>
+    <string name="TELLER">teller.json</string>
+
+    <!-- FineractBaseActivity -->
+    <string name="KEY_ACTIVITY_ID">KEY_ACTIVITY_ID</string>
+
+    <!-- FileUtils -->
+    <string name="content">content</string>
+    <string name="data">data</string>
+    <string name="primary">primary</string>
+    <string name="Content_URI">content://downloads/public_downloads</string>
+    <string name="video">video</string>
+    <string name="audio">audio</string>
+    <string name="String_selection">_id=?</string>
+    <string name="External_Storage">com.android.externalstorage.documents</string>
+    <string name="Downloads_Document">com.android.providers.downloads.documents</string>
+    <string name="Media_Document">com.android.providers.media.documents</string>
+    <string name="Goosle_Photos_Uri">com.google.android.apps.photos.content</string>
+
+    <!-- FineractInterceptor -->
+    <string name="HEADER_TENANT">X-Tenant-Identifier</string>
+    <string name="HEADER_AUTH">Authorization</string>
+    <string name="HEADER_ACCEPT_JSON">Accept</string>
+    <string name="HEADER_CONTENT_TYPE">Content-type</string>
+    <string name="HEADER_USER">User</string>
+    <string name="Application_Json">application/json</string>
+    <string name="Cookie">Cookie</string>
+
+    <!-- PreferenceKey -->
+    <string name="PREF_MIFOS">preferences_fineract</string>
+    <string name="PREF_KEY_TENANT_IDENTIFIER">PREF_KEY_TENANT_IDENTIFIER</string>
+    <string name="PREF_KEY_ACCESS_TOKEN">PREF_KEY_ACCESS_TOKEN</string>
+    <string name="PREF_KEY_SIGNED_IN_USER">PREF_KEY_SIGNED_IN_USER</string>
+    <string name="PREF_KEY_USER_NAME">PREF_KEY_USER_NAME</string>
+    <string name="PREF_KEY_REFRESH_ACCESS_TOKEN">PREF_KEY_REFRESH_ACCESS_TOKEN</string>
+    <string name="PREF_KEY_COOKIES">PREF_KEY_COOKIES</string>
+    <string name="PREF_IS_FETCHING">PREF_IS_FETCHING</string>
+    <string name="PREF_IS_FIRST_TIME">PREF_IS_FIRST_TIME</string>
+    <string name="Set_Cookie">Set-Cookie</string>
+
+    <!--StartSyncJob -->
+    <string name="CUSTOMERS_SYNC">CUSTOMERS_SYNC</string>
+    <string name="status">status</string>
+    <string name="JobsReceiver">org.apache.fineract.JobsReceiver</string>
+
+    <string name="characters"> characters</string>
+    <string name="SSL">SSL</string>
+    <string name="Alphabets">Alphabets</string>
+    <string name="sans_serif_light">sans-serif-light</string>
+    <string name="scan_png">scan.png</string>
+    <string name="org_apache_fineract_fileprovider">org.apache.fineract.fileprovider</string>
+    <string name="image_png">image/png</string>
+   <string name="String_Format">%.2f</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

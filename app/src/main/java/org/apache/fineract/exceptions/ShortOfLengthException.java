@@ -3,6 +3,8 @@ package org.apache.fineract.exceptions;
 import android.content.Context;
 import android.widget.Toast;
 
+import org.apache.fineract.R;
+
 public class ShortOfLengthException extends Exception {
 
     private int minimumCharacters;
@@ -16,8 +18,8 @@ public class ShortOfLengthException extends Exception {
 
     @Override
     public String toString() {
-        return inputField + " Field Expects at least " + minimumCharacters
-                + " characters";
+        return inputField + String.valueOf(R.string.error_Field_Expects_at_least)+ minimumCharacters
+                + String.valueOf(R.string.characters);
     }
 
     public void notifyUserWithToast(Context context) {

@@ -37,7 +37,7 @@ public class CreateCustomerActivity extends FineractBaseActivity
         OnNavigationBarListener.CustomerAddress, CreateCustomerContract.View,
         OnNavigationBarListener.CustomerContactDetails {
 
-    private static final String CURRENT_STEP_POSITION = "position";
+    private static final String CURRENT_STEP_POSITION = String.valueOf(R.string.POSITION);
     private static final String LOG_TAG = CreateCustomerActivity.class.getSimpleName();
 
     @BindView(R.id.stepperLayout)

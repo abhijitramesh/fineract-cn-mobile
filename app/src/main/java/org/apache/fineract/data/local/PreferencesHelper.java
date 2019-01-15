@@ -6,6 +6,8 @@ import android.support.annotation.Nullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+
+import org.apache.fineract.R;
 import org.apache.fineract.data.models.Authentication;
 import org.apache.fineract.injection.ApplicationContext;
 
@@ -24,7 +26,7 @@ public class PreferencesHelper {
     public PreferencesHelper(@ApplicationContext Context context) {
         preferences = context.getSharedPreferences(PreferenceKey.PREF_MIFOS, Context.MODE_PRIVATE);
         gson = new GsonBuilder()
-                .setDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSz")
+                .setDateFormat(R.string.STANDARD_DATE_TIME_FORMAT)
                 .create();
     }
 

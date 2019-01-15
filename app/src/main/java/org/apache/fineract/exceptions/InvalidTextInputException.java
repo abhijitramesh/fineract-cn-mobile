@@ -4,10 +4,11 @@ import android.content.Context;
 import android.view.View;
 import android.widget.Toast;
 
+import org.apache.fineract.R;
 import org.apache.fineract.ui.base.Toaster;
 
 public class InvalidTextInputException extends Exception {
-    public static final String TYPE_ALPHABETS = "Alphabets";
+    public static final String TYPE_ALPHABETS = String.valueOf(R.string.Alphabets);
     private String fieldInput;
     private String localisedErrorMessage;
     private String inputType;

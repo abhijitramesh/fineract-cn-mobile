@@ -87,7 +87,7 @@ public class CustomerProfileActivity extends FineractBaseActivity
     public void shareImage() {
         Uri bitmapUri = getImageUri(this, getBitmapFromView(ivCustomerProfile));
         Intent shareIntent = new Intent(Intent.ACTION_SEND);
-        shareIntent.setType("image/jpg");
+        shareIntent.setType(String.valueOf(R.string.Image_Format));
         shareIntent.putExtra(Intent.EXTRA_STREAM, bitmapUri);
         startActivity(Intent.createChooser(shareIntent,
                 getString(R.string.share_customer_profile)));

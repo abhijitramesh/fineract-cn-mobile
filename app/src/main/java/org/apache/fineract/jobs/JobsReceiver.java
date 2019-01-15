@@ -23,10 +23,10 @@ public class JobsReceiver extends BroadcastReceiver {
                 getSerializableExtra(StartSyncJob.STATUS);
         String msg;
         if (jobStatus == StartSyncJob.JobStatus.STARTED) {
-            msg = "Fetching data from server, we will notify you once its done.";
+            msg = String.valueOf(R.string.dialog_message_fetching_data_from_server);
             preferencesHelper.setFetching(true);
         } else {
-            msg = "Fetching data complete.";
+            msg = String.valueOf(R.string.dialog_message_fetching_data_complete);
             preferencesHelper.setFetching(false);
         }
         showNotification(context, msg);
@@ -37,13 +37,13 @@ public class JobsReceiver extends BroadcastReceiver {
         NotificationManager mNotificationManager =
                 (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-            NotificationChannel channel = new NotificationChannel("default",
-                    "YOUR_CHANNEL_NAME",
+            NotificationChannel channel = new NotificationChannel(String.valueOf(R.string.Default),
+                    String.valueOf(R.string.Your_Channel_Name),
                     NotificationManager.IMPORTANCE_DEFAULT);
-            channel.setDescription("NOTIFICATION_CHANNEL");
+            channel.setDescription(String.valueOf(R.string.Notification_Channel));
             mNotificationManager.createNotificationChannel(channel);
         }
-        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(context, "default")
+        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(context, String.valueOf(R.string.Default))
                 .setSmallIcon(R.drawable.launcher_image)
                 .setContentTitle(context.getString(R.string.app_name))
                 .setContentText(msg)

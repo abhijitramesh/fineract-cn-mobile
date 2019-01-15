@@ -148,14 +148,14 @@ public class UploadIdentificationCardBottomSheet extends FineractBaseBottomSheet
         if (takePictureIntent.resolveActivity(getActivity().getPackageManager()) != null) {
 
             cameraImage = new File(getActivity().getExternalCacheDir() +
-                    File.separator + "scan.png");
+                    File.separator + String.valueOf(R.string.scan_png));
 
             if (cameraImage.exists()) {
                 cameraImage.delete();
             }
 
             Uri photoURI = FileProvider.getUriForFile(getActivity(),
-                    "org.apache.fineract.fileprovider", cameraImage);
+                    String.valueOf(R.string.org_apache_fineract_fileprovider), cameraImage);
 
             takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
             startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);

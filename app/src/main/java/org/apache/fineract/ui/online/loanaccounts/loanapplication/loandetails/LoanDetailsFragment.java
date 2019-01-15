@@ -534,7 +534,7 @@ public class LoanDetailsFragment extends FineractBaseFragment implements Step,
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
-        outState.putStringArrayList("products", (ArrayList<String>) products);
+        outState.putStringArrayList(String.valueOf(R.string.PRODUCTS), (ArrayList<String>) products);
         super.onSaveInstanceState(outState);
     }
 }

@@ -9,6 +9,8 @@ import android.view.Menu;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+import org.apache.fineract.R;
+
 import java.util.Locale;
 
 /**
@@ -23,7 +25,7 @@ public class Utils {
     }
 
     public static String getPrecision(Double aDouble) {
-        return String.format(Locale.ENGLISH, "%.2f", aDouble);
+        return String.format(Locale.ENGLISH, String.valueOf(R.string.String_Format), aDouble);
     }
 
     public static void setToolbarIconColor(Context context, Menu menu, int color) {

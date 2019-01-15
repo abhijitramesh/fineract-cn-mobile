@@ -3,6 +3,7 @@ package org.apache.fineract.data.remote;
 import android.content.Context;
 
 import org.apache.fineract.FineractApplication;
+import org.apache.fineract.R;
 import org.apache.fineract.data.local.PreferenceKey;
 import org.apache.fineract.data.local.PreferencesHelper;
 
@@ -27,9 +28,9 @@ public class ReceivedCookiesInterceptor implements Interceptor {
     public Response intercept(Chain chain) throws IOException {
         Response originalResponse = chain.proceed(chain.request());
 
-        if (!originalResponse.headers("Set-Cookie").isEmpty()) {
+        if (!originalResponse.headers(String.valueOf(R.string.Set_Cookie)).isEmpty()) {
             HashSet<String> cookies = new HashSet<>();
-            for (String header : originalResponse.headers("Set-Cookie")) {
+            for (String header : originalResponse.headers(String.valueOf(R.string.Set_Cookie))) {
                 cookies.add(header);
             }
             preferencesHelper.putStringSet(PreferenceKey.PREF_KEY_COOKIES, cookies);

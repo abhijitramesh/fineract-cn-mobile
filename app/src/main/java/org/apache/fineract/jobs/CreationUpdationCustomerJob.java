@@ -7,6 +7,7 @@ import android.util.Log;
 import com.evernote.android.job.Job;
 import com.evernote.android.job.JobRequest;
 
+import org.apache.fineract.R;
 import org.apache.fineract.data.datamanager.api.DataManagerCustomer;
 import org.apache.fineract.data.datamanager.contracts.ManagerCustomer;
 import org.apache.fineract.data.local.database.helpers.DatabaseHelperCustomer;

@@ -7,6 +7,7 @@ import android.support.annotation.NonNull;
 import com.evernote.android.job.Job;
 import com.evernote.android.job.JobRequest;
 
+import org.apache.fineract.R;
 import org.apache.fineract.data.datamanager.api.DataManagerCustomer;
 import org.apache.fineract.data.datamanager.contracts.ManagerCustomer;
 import org.apache.fineract.data.local.database.helpers.DatabaseHelperCustomer;
@@ -23,8 +24,8 @@ import io.reactivex.schedulers.Schedulers;
 @Singleton
 public class StartSyncJob extends Job {
 
-    public static final String TAG = "CUSTOMERS_SYNC";
-    public static final String STATUS = "status";
+    public static final String TAG ="CUSTOMERS_SYNC";
+    public static final String STATUS = String.valueOf(R.string.status);
     private ManagerCustomer dataManagerCustomer;
     private DatabaseHelperCustomer dbHelper;
 
@@ -67,7 +68,7 @@ public class StartSyncJob extends Job {
     }
 
     private void updateStatus(JobStatus status) {
-        Intent intent = new Intent("org.apache.fineract.JobsReceiver");
+        Intent intent = new Intent(String.valueOf(R.string.JobsReceiver));
         intent.putExtra(STATUS, status);
         getContext().sendBroadcast(intent);
     }

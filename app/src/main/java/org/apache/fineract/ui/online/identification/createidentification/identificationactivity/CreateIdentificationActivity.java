@@ -32,7 +32,7 @@ public class CreateIdentificationActivity extends FineractBaseActivity
         implements StepperLayout.StepperListener, CreateIdentificationContract.View,
         OnNavigationBarListener.IdentificationCard {
 
-    private static final String CURRENT_STEP_POSITION = "position";
+    private static final String CURRENT_STEP_POSITION = String.valueOf(R.string.POSITION);
     private static final String LOG_TAG = CreateIdentificationActivity.class.getSimpleName();
 
     @BindView(R.id.stepperLayout)

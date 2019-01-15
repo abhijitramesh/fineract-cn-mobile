@@ -56,9 +56,9 @@ public class UploadIdentificationCardPresenter extends
             String scanIdentifier, String description, File file) {
 
         RequestBody requestFile =
-                RequestBody.create(MediaType.parse("image/png"), file);
+                RequestBody.create(MediaType.parse(String.valueOf(R.string.image_png)), file);
         MultipartBody.Part body =
-                MultipartBody.Part.createFormData("image", "scan.png", requestFile);
+                MultipartBody.Part.createFormData("image", String.valueOf(R.string.scan_png), requestFile);
 
         checkViewAttached();
         getMvpView().showProgressDialog();

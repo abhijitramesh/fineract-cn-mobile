@@ -41,7 +41,7 @@ import butterknife.OnClick;
  */
 public class FormCustomerDetailsFragment extends FineractBaseFragment implements Step, TextWatcher {
 
-    public static final String DATE_FORMAT = "dd MMM yyyy";
+    public static final String DATE_FORMAT = String.valueOf(R.string.OUTPUT_DATE_FORMAT);
 
     @BindView(R.id.til_account)
     TextInputLayout tilAccount;

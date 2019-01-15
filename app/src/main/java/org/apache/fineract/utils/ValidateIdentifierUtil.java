@@ -54,7 +54,7 @@ public class ValidateIdentifierUtil {
     }
 
     private static String encode(String identifier) throws UnsupportedEncodingException {
-        return URLEncoder.encode(identifier, "UTF-8");
+        return URLEncoder.encode(identifier, String.valueOf(R.string.UTF_8));
     }
 
     public static void showTextInputLayoutError(TextInputLayout textInputLayout,

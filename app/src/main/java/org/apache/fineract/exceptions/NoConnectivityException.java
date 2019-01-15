@@ -1,5 +1,7 @@
 package org.apache.fineract.exceptions;
 
+import org.apache.fineract.R;
+
 import java.io.IOException;
 
 /**
@@ -10,6 +12,6 @@ public class NoConnectivityException extends IOException {
 
     @Override
     public String getMessage() {
-        return "No connectivity exception";
+        return String.valueOf(R.string.No_connectivity_exception);
     }
 }

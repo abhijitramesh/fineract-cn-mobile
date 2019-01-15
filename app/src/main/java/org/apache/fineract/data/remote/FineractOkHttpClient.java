@@ -2,6 +2,8 @@ package org.apache.fineract.data.remote;
 
 import android.content.Context;
 
+import org.apache.fineract.R;
+
 import java.security.KeyStore;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
@@ -56,7 +58,7 @@ public class FineractOkHttpClient {
             };
 
             // Install the all-trusting trust manager
-            SSLContext sslContext = SSLContext.getInstance("SSL");
+            SSLContext sslContext = SSLContext.getInstance(String.valueOf(R.string.SSL));
             sslContext.init(null, trustAllCerts, new java.security.SecureRandom());
             // Create an ssl socket factory with our all-trusting manager
             SSLSocketFactory sslSocketFactory = sslContext.getSocketFactory();
