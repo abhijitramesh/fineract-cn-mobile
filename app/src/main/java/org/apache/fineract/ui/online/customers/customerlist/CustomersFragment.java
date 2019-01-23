@@ -56,6 +56,7 @@ public class CustomersFragment extends FineractBaseFragment implements Customers
 
     View rootView;
 
+
     @Inject
     CustomersPresenter customerPresenter;
 
@@ -116,11 +117,13 @@ public class CustomersFragment extends FineractBaseFragment implements Customers
     @Override
     public void onRefresh() {
         customerPresenter.fetchCustomers(0, false);
+        sweetUIErrorHandler.hideSweetErrorLayoutUI(rvCustomers,layoutError);
     }
 
     @OnClick(R.id.btn_try_again)
     void onRetry() {
         customerPresenter.fetchCustomers(0, false);
+        sweetUIErrorHandler.hideSweetErrorLayoutUI(rvCustomers,layoutError);
     }
 
     @Override
@@ -134,6 +137,7 @@ public class CustomersFragment extends FineractBaseFragment implements Customers
         swipeRefreshLayout.setColorSchemeColors(getActivity()
                 .getResources().getIntArray(R.array.swipeRefreshColors));
         swipeRefreshLayout.setOnRefreshListener(this);
+        sweetUIErrorHandler = new SweetUIErrorHandler(getActivity(),rootView);
 
     }
 
@@ -161,10 +165,10 @@ public class CustomersFragment extends FineractBaseFragment implements Customers
 
     @Override
     public void showEmptyCustomers(String message) {
-        showRecyclerView(false);
-        showFineractEmptyUI(getString(R.string.customers), getString(R.string.customer),
-                R.drawable.ic_customer_black_24dp);
+        sweetUIErrorHandler.showSweetCustomErrorUI(getString(R.string.customer),
+                getString(Integer.parseInt(message)),R.drawable.ic_error_black_24dp,rvCustomers,layoutError);
     }
+
 
     @Override
     public void showRecyclerView(boolean status) {
@@ -196,15 +200,18 @@ public class CustomersFragment extends FineractBaseFragment implements Customers
     public void showNoInternetConnection() {
         showRecyclerView(false);
         showFineractNoInternetUI();
+        sweetUIErrorHandler.showSweetNoInternetUI(swipeRefreshLayout,layoutError);
     }
 
     @Override
     public void showError(String message) {
         if (customerAdapter.getItemCount() != 0) {
-            showMessage(getString(R.string.error_failed_to_refresh_customers));
+            sweetUIErrorHandler.showSweetCustomErrorUI(message,
+                    R.drawable.ic_error_black_24dp,swipeRefreshLayout,layoutError);
         } else {
             showRecyclerView(false);
-            showFineractErrorUI(getString(R.string.customers));
+            sweetUIErrorHandler.showSweetCustomErrorUI(getString(R.string.customers),
+                    R.drawable.ic_error_black_24dp,swipeRefreshLayout,layoutError);
         }
     }
 

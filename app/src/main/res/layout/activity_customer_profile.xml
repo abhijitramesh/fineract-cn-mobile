@@ -24,6 +24,9 @@
             android:contentDescription="@string/customer_image"/>
 
     </LinearLayout>
-
+    <include
+        layout="@layout/layout_sweet_exception_handler"
+        android:id="@+id/layout_error"
+        android:visibility="gone"/>
 </RelativeLayout>
 
